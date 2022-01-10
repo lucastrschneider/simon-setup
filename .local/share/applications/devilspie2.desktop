@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Devil's Pie 2
+GenericName=Devil's Pie 2
+Comment=Window-matching utility
+Exec=/usr/bin/devilspie2
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=
+StartupNotify=false

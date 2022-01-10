@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>edit-find</icon>
+	<name>Search For Files</name>
+	<unique-id>1641658744007599-1</unique-id>
+	<command>searchmonkey -d %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1641395224865137-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Example for a custom action</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon></icon>
+	<name>Move Into New Folder</name>
+	<unique-id>1641515136323889-1</unique-id>
+	<command>NEW_FOLDER=$(/usr/bin/zenity --entry --title &apos;Move into new folder&apos; --text &apos;Please enter a name for the new folder&apos;) &amp;&amp; mkdir &quot;$NEW_FOLDER&quot; &amp;&amp; mv %F &quot;$NEW_FOLDER&quot;</command>
+	<description>Move files into a new folder</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+</actions>
