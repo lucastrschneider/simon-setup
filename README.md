@@ -45,6 +45,7 @@ make local-install
 - User Themes
 - Workspaces bar
 - System-monitor
+- Ubuntu AppIndicators
 
 ### Startup Applications
 
@@ -107,7 +108,8 @@ sudo ./docker_install.sh
 
 ### VSCode
 
-Theme [Dark Horizon](https://github.com/mcagampan/dark-horizon)
+- Theme [Dark Horizon](https://github.com/mcagampan/dark-horizon)
+- Open settings and add 'FiraCode Nerd Font' to the start of the list
 
 ### Gedit
 
