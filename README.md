@@ -100,7 +100,7 @@ Run the following script an add the copied key to GitHub.
 
 ## ROS
 
-Add the **restricted**, **universe** adn **multiverse** repositories on Ubuntu and then run the following script.
+Add the **restricted**, **universe** and **multiverse** repositories on Ubuntu and then run the following script.
 
 ```bash
 ./ros_noetic_install.sh
@@ -111,7 +111,7 @@ Add the **restricted**, **universe** adn **multiverse** repositories on Ubuntu a
 Run the script to install Docker and Docker Compose
 
 ```bash
-sudo ./docker_install.sh
+./docker_install.sh
 ```
 
 ## STMicoreletronics
