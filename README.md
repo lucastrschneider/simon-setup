@@ -114,6 +114,53 @@ Run the script to install Docker and Docker Compose
 sudo ./docker_install.sh
 ```
 
+## STMicoreletronics
+
+### ARM GCC
+
+First, install dependencies.
+
+```bash
+sudo apt install libncurses5
+```
+
+Then, download latest *GNU Arm Embedded Toolchain* from the [Arm Developer website](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Extract it in the desired location (`/usr/local` for exemple) and add it to PATH.
+
+```bash
+sudo tar xjf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C /usr/local
+```
+
+### STM32CubeMX
+
+Download latest version from the [STM32CubeMX website](https://www.st.com/b/en/development-tools/stm32cubemx.html) and extract the zip folder. Give the setup file the necessary permissions and run it as sudo.
+
+```bash
+chmod 777 SetupSTM32CubeMX-6.4.0
+sudo ./SetupSTM32CubeMX-6.4.0
+```
+
+### STM32CubeProgrammer
+
+Download latest version from the [STM32CubeProgrammer website](https://www.st.com/en/development-tools/stm32cubeprog.html) and extract the zip folder. Give the setup file the necessary permissions and run it as sudo.
+
+```bash
+chmod 777 SetupSTM32CubeProgrammer-2.9.0.linux
+sudo ./SetupSTM32CubeProgrammer-2.9.0.linux
+```
+
+Now, install `libusb` to handle USB devices .
+
+```bash
+sudo apt install libusb-1.0-0-dev
+```
+
+Then copy the rules files in the CubeProgrammer installation folder to `/etc/udev/rules.d`.
+
+```bash
+cd /usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/Drivers/rules/
+sudo cp *.* /etc/udev/rules.d
+```
+
 ## Aditional configurations
 
 ### VSCode

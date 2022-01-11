@@ -16,7 +16,7 @@ sudo apt update
 sudo apt upgrade -y
 
 # Install basic tools
-sudo apt install build-essential git python3 python3-pip -y
+sudo apt install build-essential make git python3 python3-pip -y
 
 # Config git
 git config --global init.defaultBranch main
