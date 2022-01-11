@@ -1,5 +1,5 @@
 # Change pop-shell launcher and tiling edit mode
-dconf write '/org/gnome/shell/extensions/pop-shell/activate-launcher' "['<Super>space']"
+dconf write '/org/gnome/shell/extensions/pop-shell/activate-launcher' "['']"
 dconf write '/org/gnome/shell/extensions/pop-shell/tile-enter' "['<Super>slash']"
 
 # Change GNOME launchers shortcuts

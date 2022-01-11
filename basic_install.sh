@@ -41,7 +41,7 @@ yes | curl -L https://get.oh-my.fish | fish
 fish -c 'omf install bass -y'
 
 # Other utilities
-sudo apt install gnome-tweaks dconf-editor neofetch htop thunar thunar-archive-plugin searchmonkey devilspie2
+sudo apt install gnome-tweaks dconf-editor neofetch htop thunar thunar-archive-plugin searchmonkey devilspie2 rofi steam
 
 # Config local time
 timedatectl set-local-rtc 1 --adjust-system-clock

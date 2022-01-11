@@ -80,6 +80,16 @@ For extra shortcuts, add then using GNOME Settings application.
 - Thunar (Super + f)
 - VSCode (Super + c)
 
+## Rofi
+
+Squared red theme from [rofi-themes](https://github.com/ulises-jeremias/rofi-themes).
+
+Add command to Keyboard Shortcuts
+
+```bash
+rofi -show combi -combi-modi "window,drun" -modi "combi,run,ssh" -show-icons
+```
+
 ## SSH Keys
 
 Run the following script an add the copied key to GitHub.
