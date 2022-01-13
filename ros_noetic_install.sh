@@ -18,4 +18,7 @@ sudo pip3 install -U catkin_tools
 # Extra utilitis
 sudo apt install clang-tidy
 
-# TODO: rosdep
+# Rosdep
+sudo apt install python3-rosdep
+sudo rosdep init
+sudo rosdep update
