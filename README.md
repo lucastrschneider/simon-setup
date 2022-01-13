@@ -12,7 +12,7 @@ Install latest Ubuntu version and run the *basic install* script
 
 Follow [this tutorial](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-20-04-focal-fossa-linux) to install recommended drivers
 
-After rebooting, open `Nvidia XServer Settings` and in **PRIME Profiles** select the **NVIDIA (Performance Mode)** option to use the NVidia GPU at all times (recommended when using OpenGL terminal emulators like Alacritty and an HDMI display).
+After rebooting, open `Nvidia XServer Settings` and in **PRIME Profiles** select the **NVIDIA (Performance Mode)** option to use the Nvidia GPU at all times (recommended when using OpenGL terminal emulators like Alacritty and an HDMI display).
 
 ## Pop shell
 
@@ -23,6 +23,17 @@ sudo apt update
 sudo apt install node-typescript make
 make local-install
 ```
+
+## Headset fix
+
+Open the file `/etc/modprobe.d/alsa-base.conf` and add this line in the end.
+
+```
+# Custom
+options snd-hda-intel model=headset-mic,dell-headset-multi
+```
+
+Now reboot and test if the headset choose pop-up appears when plugged.
 
 ## Tweaks
 
@@ -108,11 +119,13 @@ Add the **restricted**, **universe** and **multiverse** repositories on Ubuntu a
 
 ## Docker
 
-Run the script to install Docker and Docker Compose
+Run the script to install Docker and Docker Compose.
 
 ```bash
 ./docker_install.sh
 ```
+
+After that, follow [this tutorial](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html) to install the Nvidia Container Toolkit.
 
 ## STMicoreletronics
 
@@ -160,6 +173,10 @@ Then copy the rules files in the CubeProgrammer installation folder to `/etc/ude
 cd /usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/Drivers/rules/
 sudo cp *.* /etc/udev/rules.d
 ```
+
+### STM32CubeMonitor
+
+### JLink
 
 ## Aditional configurations
 
