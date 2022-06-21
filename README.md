@@ -14,6 +14,18 @@ Follow [this tutorial](https://linuxconfig.org/how-to-install-the-nvidia-drivers
 
 After rebooting, open `Nvidia XServer Settings` and in **PRIME Profiles** select the **NVIDIA (Performance Mode)** option to use the Nvidia GPU at all times (recommended when using OpenGL terminal emulators like Alacritty and an HDMI display).
 
+Also, install [nvitop](https://github.com/XuehaiPan/nvitop) to monitor CPU, GPU and memory usage with the terminal.
+
+```bash
+sudo pip3 install --upgrade nvitop
+```
+
+To run as resource monitor:
+
+```bash
+nvitop -m
+```
+
 ## Pop shell
 
 Download the latest release from [pop-shell](https://github.com/pop-os/shell), extract the file and navigate to `shell-x.x.x`. Now, run the commands:
