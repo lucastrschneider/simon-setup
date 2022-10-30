@@ -2,7 +2,7 @@
 
 ## Basic applications
 
-Install latest Ubuntu version and run the *basic install* script
+Install latest Nobara version and run the *basic install* script
 
 ```bash
 ./basic_install.sh
@@ -10,9 +10,15 @@ Install latest Ubuntu version and run the *basic install* script
 
 ## Nvidia Graphics
 
-Follow [this tutorial](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-20-04-focal-fossa-linux) to install recommended drivers
+https://ask.fedoraproject.org/t/nvidia-drivers-on-fedora-36-rtx-2070-super/25243
 
-After rebooting, open `Nvidia XServer Settings` and in **PRIME Profiles** select the **NVIDIA (Performance Mode)** option to use the Nvidia GPU at all times (recommended when using OpenGL terminal emulators like Alacritty and an HDMI display).
+Reboot and try to run the following command
+
+```bash
+nvidia-smi
+```
+
+### Nvitop
 
 Also, install [nvitop](https://github.com/XuehaiPan/nvitop) to monitor CPU, GPU and memory usage with the terminal.
 
@@ -26,15 +32,21 @@ To run as resource monitor:
 nvitop -m
 ```
 
-## Pop shell
+## Docker
 
-Download the latest release from [pop-shell](https://github.com/pop-os/shell), extract the file and navigate to `shell-x.x.x`. Now, run the commands:
+Run the script to install Docker and Docker Compose.
 
 ```bash
-sudo apt update
-sudo apt install node-typescript make
-make local-install
+./docker_install.sh
 ```
+
+### Nvidia Container Toolkit
+
+As it is not official supported on Fedora, it is necessary to use the CentOS 8 version
+
+https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#supported-platforms
+
+https://github.com/NVIDIA/nvidia-docker/issues/706#issuecomment-851816502
 
 ## Headset fix
 
@@ -46,6 +58,65 @@ options snd-hda-intel model=headset-mic,dell-headset-multi
 ```
 
 Now reboot and test if the headset choose pop-up appears when plugged.
+
+## SSH Keys
+
+Run the following script an add the copied key to GitHub.
+
+```bash
+./git_ssh_config.sh
+```
+
+## Keyboard Shorcuts
+
+Run the following script to configure keyboard shortcuts using dconf.
+
+```bash
+./change_keybindings.sh
+```
+
+For extra shortcuts, add then using GNOME Settings application.
+
+## Alacritty
+
+First, set alacritty to be the default terminal application
+
+```bash
+gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/alacritty
+gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
+```
+
+After that, add command as the `<Super>Return` keyboard shortcut
+
+```bash
+alacritty
+```
+
+## Wofi
+
+Add command as the `<Super>Space` keyboard shortcut
+
+```bash
+wofi -S drun
+```
+
+Style based on [synaptiko/.files](https://github.com/synaptiko/.files/blob/master/wofi/style.css)
+
+## Nautilus
+
+Add command as the `<Super>f` keyboard shortcut
+
+```bash
+nautilus --new-window
+```
+
+## VSCode
+
+Add command as the `<Super>c` keyboard shortcut
+
+```bash
+code
+```
 
 ## Tweaks
 
@@ -70,10 +141,6 @@ Now reboot and test if the headset choose pop-up appears when plugged.
 - System-monitor
 - Ubuntu AppIndicators
 
-### Startup Applications
-
-- Add devilspie2 (use .desktop from `~/.local/share/applications`)
-
 ### Top bar
 
 - Disable Activities Overview Hot Corner
@@ -90,55 +157,6 @@ Now reboot and test if the headset choose pop-up appears when plugged.
 - Set static workspaces to 9
 - Workspaces span displays
 
-## Keyboard Shorcuts
-
-Run the following script to configure keyboard shortcuts using dconf.
-
-```bash
-./change_keybindings.sh
-```
-
-For extra shortcuts, add then using GNOME Settings application.
-
-- Thunar (Super + f)
-- VSCode (Super + c)
-
-## Rofi
-
-Squared red theme from [rofi-themes](https://github.com/ulises-jeremias/rofi-themes).
-
-Add command to Keyboard Shortcuts
-
-```bash
-rofi -show combi -combi-modi "window,drun" -modi "combi,run,ssh" -show-icons
-```
-
-## SSH Keys
-
-Run the following script an add the copied key to GitHub.
-
-```bash
-./git_ssh_config.sh
-```
-
-## ROS
-
-Add the **restricted**, **universe** and **multiverse** repositories on Ubuntu and then run the following script.
-
-```bash
-./ros_noetic_install.sh
-```
-
-## Docker
-
-Run the script to install Docker and Docker Compose.
-
-```bash
-./docker_install.sh
-```
-
-After that, follow [this tutorial](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html) to install the Nvidia Container Toolkit.
-
 ## STMicoreletronics
 
 ### ARM GCC
@@ -146,7 +164,7 @@ After that, follow [this tutorial](https://docs.nvidia.com/datacenter/cloud-nati
 First, install dependencies.
 
 ```bash
-sudo apt install libncurses5
+sudo dnf install libncurses5
 ```
 
 Then, download latest *GNU Arm Embedded Toolchain* from the [Arm Developer website](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Extract it in the desired location (`/usr/local` for exemple) and add it to PATH.
@@ -176,7 +194,7 @@ sudo ./SetupSTM32CubeProgrammer-2.9.0.linux
 Now, install `libusb` to handle USB devices .
 
 ```bash
-sudo apt install libusb-1.0-0-dev
+sudo dnf install libusb-1.0-0-dev
 ```
 
 Then copy the rules files in the CubeProgrammer installation folder to `/etc/udev/rules.d`.
@@ -188,7 +206,11 @@ sudo cp *.* /etc/udev/rules.d
 
 ### STM32CubeMonitor
 
+**TODO**
+
 ### JLink
+
+**TODO**
 
 ## Aditional configurations
 
@@ -199,17 +221,7 @@ sudo cp *.* /etc/udev/rules.d
 
 ### Gedit
 
-Theme file in `~/.local/share/gedit/styles`
-
-### Thunar
-
-Plugin configuration based on the [official documentation](https://docs.xfce.org/xfce/thunar/start#thunar_plugins).
-- Archive Plugin (thunar-archive-plugin)
-- Volume Manager (thunar-volman)
-- Custom
-    - Search for file with [searchmonkey](https://askubuntu.com/questions/1085224/ubuntu-file-search-in-thunar). Add float window exception on pop-shell.
-    - Move Into New Folder
-
+In preferences, disable the *Highlight current line* option and select the *Tango* color scheme.
 
 ## References
 
