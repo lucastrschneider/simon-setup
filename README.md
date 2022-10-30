@@ -10,17 +10,36 @@ Install latest Nobara version and run the *basic install* script
 
 ## Nvidia Graphics
 
-https://ask.fedoraproject.org/t/nvidia-drivers-on-fedora-36-rtx-2070-super/25243
+Instructions taken from [this thread](https://ask.fedoraproject.org/t/nvidia-drivers-on-fedora-36-rtx-2070-super/25243)
 
-Reboot and try to run the following command
+1. First remove all packages that may already be installed
+    ```bash
+    sudo dnf remove "*nvidia*"
+    ```
 
-```bash
-nvidia-smi
-```
+2. Then insall the necessary packages
+    ```bash
+    sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda
+    ```
+
+3. Reboot
+
+4. Check the output of those two commands
+
+    ```bash
+    dmesg | grep -iE 'nvidia|secure'
+    lsmod | grep nvidia
+    ```
+
+    Also, try to run the following command
+
+    ```bash
+    nvidia-smi
+    ```
 
 ### Nvitop
 
-Also, install [nvitop](https://github.com/XuehaiPan/nvitop) to monitor CPU, GPU and memory usage with the terminal.
+Install [nvitop](https://github.com/XuehaiPan/nvitop) to monitor CPU, GPU and memory usage with the terminal.
 
 ```bash
 sudo pip3 install --upgrade nvitop
@@ -46,9 +65,15 @@ Based on [this documentation](https://docs.docker.com/engine/install/fedora/)
 
 As it is not official supported on Fedora, it is necessary to use the CentOS 8 version
 
-https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#supported-platforms
+To do this, follow the instructions from [this issue](https://github.com/NVIDIA/nvidia-docker/issues/706#issuecomment-851816502)
 
-https://github.com/NVIDIA/nvidia-docker/issues/706#issuecomment-851816502
+If needed, also check the oficial [Nvidia documentation](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#supported-platforms)
+
+To test if everything is working fine, run the following command
+
+```bash
+docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
+```
 
 ## Headset fix
 
