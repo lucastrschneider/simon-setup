@@ -39,7 +39,7 @@ Instructions taken from [this thread](https://ask.fedoraproject.org/t/nvidia-dri
 
 ### Nvitop
 
-Install [nvitop](https://github.com/XuehaiPan/nvitop) to monitor CPU, GPU and memory usage with the terminal.
+Install [nvitop](https://github.com/XuehaiPan/nvitop) to monitor CPU, GPU and memory usage with the terminal
 
 ```bash
 sudo pip3 install --upgrade nvitop
@@ -53,7 +53,7 @@ nvitop -m
 
 ## Docker
 
-Run the script to install Docker and Docker Compose.
+Run the script to install Docker and Docker Compose
 
 ```bash
 ./docker_install.sh
@@ -77,18 +77,18 @@ docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
 
 ## Headset fix
 
-Open the file `/etc/modprobe.d/alsa-base.conf` and add this line in the end.
+Open the file `/etc/modprobe.d/alsa-base.conf` and add this line in the end
 
 ```
 # Custom
 options snd-hda-intel model=headset-mic,dell-headset-multi
 ```
 
-Now reboot and test if the headset choose pop-up appears when plugged.
+Now reboot and test if the headset choose pop-up appears when plugged
 
 ## SSH Keys
 
-Run the following script an add the copied key to GitHub.
+Run the following script an add the copied key to GitHub
 
 ```bash
 ./git_ssh_config.sh
@@ -96,13 +96,13 @@ Run the following script an add the copied key to GitHub.
 
 ## Keyboard Shorcuts
 
-Run the following script to configure keyboard shortcuts using dconf.
+Run the following script to configure keyboard shortcuts using dconf
 
 ```bash
 ./change_keybindings.sh
 ```
 
-For extra shortcuts, add then using GNOME Settings application.
+For extra shortcuts, add then using GNOME Settings application
 
 ## Alacritty
 
@@ -147,13 +147,21 @@ code
 
 ## Discord
 
-Install the WebCord, so that screensharing works properly on wayland.
+Install the WebCord, so that screensharing works properly on wayland
 
 ```bash
 flatpak install flathub io.github.spacingbat3.webcord
 ```
 
 After installing, remember to give mic and camera permissions on `Files > Settings`
+
+## Spotify
+
+Install from flathub using the following command
+
+```bash
+sudo flatpak install flathub com.spotify.Client
+```
 
 ## Settings
 
@@ -201,7 +209,7 @@ First, install dependencies.
 sudo dnf install libncurses5
 ```
 
-Then, download latest *GNU Arm Embedded Toolchain* from the [Arm Developer website](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Extract it in the desired location (`/usr/local` for exemple) and add it to PATH.
+Then, download latest *GNU Arm Embedded Toolchain* from the [Arm Developer website](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Extract it in the desired location (`/usr/local` for exemple) and add it to PATH
 
 ```bash
 sudo tar xjf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C /usr/local
@@ -209,7 +217,7 @@ sudo tar xjf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C /usr/local
 
 ### STM32CubeMX
 
-Download latest version from the [STM32CubeMX website](https://www.st.com/b/en/development-tools/stm32cubemx.html) and extract the zip folder. Give the setup file the necessary permissions and run it as sudo.
+Download latest version from the [STM32CubeMX website](https://www.st.com/b/en/development-tools/stm32cubemx.html) and extract the zip folder. Give the setup file the necessary permissions and run it as sudo
 
 ```bash
 chmod 777 SetupSTM32CubeMX-6.4.0
@@ -218,20 +226,20 @@ sudo ./SetupSTM32CubeMX-6.4.0
 
 ### STM32CubeProgrammer
 
-Download latest version from the [STM32CubeProgrammer website](https://www.st.com/en/development-tools/stm32cubeprog.html) and extract the zip folder. Give the setup file the necessary permissions and run it as sudo.
+Download latest version from the [STM32CubeProgrammer website](https://www.st.com/en/development-tools/stm32cubeprog.html) and extract the zip folder. Give the setup file the necessary permissions and run it as sudo
 
 ```bash
 chmod 777 SetupSTM32CubeProgrammer-2.9.0.linux
 sudo ./SetupSTM32CubeProgrammer-2.9.0.linux
 ```
 
-Now, install `libusb` to handle USB devices .
+Now, install `libusb` to handle USB devices
 
 ```bash
 sudo dnf install libusb-1.0-0-dev
 ```
 
-Then copy the rules files in the CubeProgrammer installation folder to `/etc/udev/rules.d`.
+Then copy the rules files in the CubeProgrammer installation folder to `/etc/udev/rules.d`
 
 ```bash
 cd /usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/Drivers/rules/
@@ -263,8 +271,8 @@ Follow [this tutorial](https://superuser.com/questions/1557955/how-to-remove-fir
 
 ### Gedit
 
-In preferences, disable the *Highlight current line* option and select the *Tango* color scheme.
+In preferences, disable the *Highlight current line* option and select the *Tango* color scheme
 
 ## References
 
-- Color palette [Horizon](https://horizontheme.netlify.app/).
+- Color palette [Horizon](https://horizontheme.netlify.app/)
