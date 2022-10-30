@@ -221,6 +221,10 @@ sudo cp *.* /etc/udev/rules.d
 
 ## Aditional configurations
 
+### Firefox
+
+Follow [this tutorial](https://superuser.com/questions/1557955/how-to-remove-firefox-orange-microphone-webcam-indicator-from-the-top-of-the-scr) to remove the icon showing when mic and camera are beeing used. This is necessary because they aren't reconized as pop-ups from pop shell, and will be added to the auto-tiling
+
 ### VSCode
 
 - Theme [Dark Horizon](https://github.com/mcagampan/dark-horizon)
