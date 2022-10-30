@@ -120,6 +120,16 @@ Add command as the `<Super>c` keyboard shortcut
 code
 ```
 
+## Discord
+
+Install the WebCord, so that screensharing works properly on wayland.
+
+```bash
+flatpak install flathub io.github.spacingbat3.webcord
+```
+
+After installing, remember to give mic and camera permissions on `Files > Settings`
+
 ## Settings
 
 ### Multitasking
