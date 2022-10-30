@@ -40,6 +40,8 @@ Run the script to install Docker and Docker Compose.
 ./docker_install.sh
 ```
 
+Based on [this documentation](https://docs.docker.com/engine/install/fedora/)
+
 ### Nvidia Container Toolkit
 
 As it is not official supported on Fedora, it is necessary to use the CentOS 8 version
