@@ -11,5 +11,5 @@ set     PATH $PATH $ARM_GCC_PATH
 set     PATH $PATH $STM32_CUBE_PROGRAMMER
 set     PATH $PATH $GHDL_PATH
 
-bass source /opt/ros/noetic/setup.bash
-bass source ~/bt_ws/devel/setup.bash
+# bass source /opt/ros/noetic/setup.bash
+# bass source ~/bt_ws/devel/setup.bash
