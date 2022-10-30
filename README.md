@@ -172,7 +172,7 @@ After installing, remember to give mic and camera permissions on `Files > Settin
 
 ### Windows
 
-- Cnter new windows
+- Center new windows
 - Click to Focus
 
 ## Extensions
@@ -182,12 +182,14 @@ After installing, remember to give mic and camera permissions on `Files > Settin
 - Vitals
 
 ### System extensions
+- AppIndicator and KStatusNotierItem Support
+- Application Volume Mixer
+- Blur my Shell
+- Clipboard History
+- Freon
+- Just Perfection
 - Pop Shell
 - Sound input & output device chooser
-- User Themes
-- Workspaces bar
-- System-monitor
-- Ubuntu AppIndicators
 
 ## STMicoreletronics
 
@@ -252,7 +254,7 @@ Follow [this tutorial](https://superuser.com/questions/1557955/how-to-remove-fir
 
 ### VSCode
 
-- Theme [Dark Horizon](https://github.com/mcagampan/dark-horizon)
+- Theme [Horizon](https://github.com/alexandernanberg/horizon-theme-vscode)
 - Open settings and add 'FiraCode Nerd Font' to the start of the list
 
 ### Gedit
