@@ -120,44 +120,39 @@ Add command as the `<Super>c` keyboard shortcut
 code
 ```
 
+## Settings
+
+### Multitasking
+
+- Disable hot corner and screen edges
+- Set fixed workspaces to 9
+- Workspaces on all displays
+- Include applications from current workspace only
+
+### Mouse and touchpad
+
+- Enable tap to click
+
 ## Tweaks
 
-### Appearance
+### Windows
 
-- Themes
-    - Application: Material Originals Red Dark
-    - Cursor: Yaru
-    - Icons: Papirus Red Dark
-    - Shell: Material Originals Shell Red Dark
-    - Sound: Yaru
-- Background e Lock Screen
-    - Image: `minimal-sunset.jpg`
-    - Adjustment: Zoom
+- Cnter new windows
+- Click to Focus
 
-### Extensions
+## Extensions
 
+### User installed
+- Simply workspaces
+- Vitals
+
+### System extensions
 - Pop Shell
 - Sound input & output device chooser
 - User Themes
 - Workspaces bar
 - System-monitor
 - Ubuntu AppIndicators
-
-### Top bar
-
-- Disable Activities Overview Hot Corner
-- Enable Battery Percentage
-- Enable Clock Weekday
-
-### Windows
-
-- Disable everything
-- Click to Focus
-
-### Workspaces
-
-- Set static workspaces to 9
-- Workspaces span displays
 
 ## STMicoreletronics
 
