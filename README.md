@@ -147,10 +147,10 @@ code
 
 ## Discord
 
-Install the WebCord, so that screensharing works properly on wayland
+Install the WebCord, so that screensharing works properly on wayland. The releases can be found [here](https://github.com/SpacingBat3/WebCord/releases)
 
 ```bash
-flatpak install flathub io.github.spacingbat3.webcord
+sudo dnf install ./webcord-*.rpm
 ```
 
 After installing, remember to give mic and camera permissions on `Files > Settings`
