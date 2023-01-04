@@ -12,11 +12,12 @@ GITHUB_EMAIL="lucastrschneider@gmail.com"
 #####################################
 
 # Update amd upgrade before starting
-sudo apt update
-sudo apt upgrade -y
+sudo dnf check-update
+sudo dnf upgrade -y
 
 # Install basic tools
-sudo apt install build-essential make git python3 python3-pip -y
+sudo dnf group install "C Development Tools and Libraries" "Development Tools"
+sudo dnf install cmake make git python3 python3-pip -y
 
 # Config git
 git config --global init.defaultBranch main
@@ -25,23 +26,36 @@ git config --global user.name "$GITHUB_USER"
 git config --global user.email "$GITHUB_EMAIL"
 
 # Install alacritty
-sudo add-apt-repository ppa:mmstick76/alacritty
-sudo apt install alacritty
+sudo dnf install alacritty -y
+
+# Install vscode
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+
+cat <<EOF | sudo tee /etc/yum.repos.d/vscode.repo
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+EOF
+
+sudo dnf check-update
+
+sudo dnf install code -y
 
 # Install fish and related
-sudo apt install fish -y
+sudo dnf install fish util-linux-user -y
 
 chsh -s $(which fish)
 
-sudo apt install curl -y
+sudo dnf install curl -y
 sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 yes | curl -L https://get.oh-my.fish | fish
 
-fish -c 'omf install bass -y'
-
 # Other utilities
-sudo apt install gnome-tweaks dconf-editor neofetch htop thunar thunar-archive-plugin searchmonkey devilspie2 rofi steam
+sudo dnf install htop wofi
 
 # Config local time
 timedatectl set-local-rtc 1 --adjust-system-clock
