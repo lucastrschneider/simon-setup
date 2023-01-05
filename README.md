@@ -2,7 +2,9 @@
 
 ## Basic applications
 
-Install latest Nobara version and run the *basic install* script
+Install Fedora 37 and follow the [Fedora 37 Post Install Guide](https://github.com/devangshekhawat/Fedora-37-Post-Install-Guide)
+
+After that, run the *basic install* script
 
 ```bash
 ./basic_install.sh
@@ -10,32 +12,11 @@ Install latest Nobara version and run the *basic install* script
 
 ## Nvidia Graphics
 
-Instructions taken from [this thread](https://ask.fedoraproject.org/t/nvidia-drivers-on-fedora-36-rtx-2070-super/25243)
+After following the instructions in the Post Install Guide, check with everything is working by running the following command
 
-1. First remove all packages that may already be installed
-    ```bash
-    sudo dnf remove "*nvidia*"
-    ```
-
-2. Then insall the necessary packages
-    ```bash
-    sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda
-    ```
-
-3. Reboot
-
-4. Check the output of those two commands
-
-    ```bash
-    dmesg | grep -iE 'nvidia|secure'
-    lsmod | grep nvidia
-    ```
-
-    Also, try to run the following command
-
-    ```bash
-    nvidia-smi
-    ```
+```bash
+nvidia-smi
+```
 
 ### Nvitop
 
@@ -61,23 +42,9 @@ Run the script to install Docker and Docker Compose
 
 Based on [this documentation](https://docs.docker.com/engine/install/fedora/)
 
-### Nvidia Container Toolkit
-
-As it is not official supported on Fedora, it is necessary to use the CentOS 8 version
-
-To do this, follow the instructions from [this issue](https://github.com/NVIDIA/nvidia-docker/issues/706#issuecomment-851816502)
-
-If needed, also check the oficial [Nvidia documentation](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#supported-platforms)
-
-To test if everything is working fine, run the following command
-
-```bash
-docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
-```
-
 ## Headset fix
 
-Open the file `/etc/modprobe.d/alsa-base.conf` and add this line in the end
+Open the file `/etc/modprobe.d/alsa-base.conf` (or create it) and add this line at the end
 
 ```
 # Custom
@@ -117,6 +84,16 @@ After that, add command as the `<Super>Return` keyboard shortcut
 
 ```bash
 alacritty
+```
+
+### Open Alacritty Here in Nautilus
+
+Follow the [natulius-open-any-terminal](https://github.com/Stunkymonkey/nautilus-open-any-terminal) instructions.
+
+Remember to install the dependency:
+
+```bash
+sudo dnf install nautilus-python
 ```
 
 ## Wofi
@@ -185,19 +162,20 @@ sudo flatpak install flathub com.spotify.Client
 
 ## Extensions
 
-### User installed
-- Simply workspaces
-- Vitals
+### Manually installed
 
-### System extensions
-- AppIndicator and KStatusNotierItem Support
-- Application Volume Mixer
-- Blur my Shell
-- Clipboard History
-- Freon
-- Just Perfection
+- [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
+- [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
+- [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
+- [Quick Settings Tweaker](https://extensions.gnome.org/extension/5446/quick-settings-tweaker/)
+- [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
+- [Clipboard History](https://extensions.gnome.org/extension/4839/clipboard-history/)
+- [Aylur's Widgets](https://extensions.gnome.org/extension/5338/aylurs-widgets/)
+- [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
+
+### Built-In
+
 - Pop Shell
-- Sound input & output device chooser
 
 ## STMicoreletronics
 
@@ -264,14 +242,10 @@ Use the **GNOME Disk** to configure the data partition to be automounted at logi
 
 Follow [this tutorial](https://superuser.com/questions/1557955/how-to-remove-firefox-orange-microphone-webcam-indicator-from-the-top-of-the-scr) to remove the icon showing when mic and camera are beeing used. This is necessary because they aren't reconized as pop-ups from pop shell, and will be added to the auto-tiling
 
-### VSCode
+### VSCode Theme and Font
 
 - Theme [Horizon](https://github.com/alexandernanberg/horizon-theme-vscode)
 - Open settings and add 'FiraCode Nerd Font' to the start of the list
-
-### Gedit
-
-In preferences, disable the *Highlight current line* option and select the *Tango* color scheme
 
 ## References
 
