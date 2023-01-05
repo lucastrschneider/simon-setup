@@ -11,7 +11,7 @@ GITHUB_EMAIL="lucastrschneider@gmail.com"
 ## Configuration end
 #####################################
 
-# Update amd upgrade before starting
+# Update and upgrade before starting
 sudo dnf check-update
 sudo dnf upgrade -y
 
@@ -44,6 +44,15 @@ sudo dnf check-update
 
 sudo dnf install code -y
 
+# Other utilities
+sudo dnf install -y htop wofi gnome-tweaks
+
+# Pop shell
+sudo dnf install -y gnome-shell-extension-pop-shell xprop
+
+# Config local time
+timedatectl set-local-rtc 1 --adjust-system-clock
+
 # Install fish and related
 sudo dnf install fish util-linux-user -y
 
@@ -53,9 +62,3 @@ sudo dnf install curl -y
 sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 yes | curl -L https://get.oh-my.fish | fish
-
-# Other utilities
-sudo dnf install htop wofi
-
-# Config local time
-timedatectl set-local-rtc 1 --adjust-system-clock
