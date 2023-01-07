@@ -124,13 +124,11 @@ code
 
 ## Discord
 
-Install the WebCord, so that screensharing works properly on wayland. The releases can be found [here](https://github.com/SpacingBat3/WebCord/releases)
+Install the WebCord, so that screensharing works properly on wayland.
 
 ```bash
-sudo dnf install ./webcord-*.rpm
+flatpak install flathub io.github.spacingbat3.webcord
 ```
-
-After installing, remember to give mic and camera permissions on `Files > Settings`
 
 ## Spotify
 
@@ -172,6 +170,7 @@ sudo flatpak install flathub com.spotify.Client
 - [Clipboard History](https://extensions.gnome.org/extension/4839/clipboard-history/)
 - [Aylur's Widgets](https://extensions.gnome.org/extension/5338/aylurs-widgets/)
 - [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
+- [X11 Gestures](https://extensions.gnome.org/extension/4033/x11-gestures/)
 
 ### Built-In
 
@@ -244,9 +243,5 @@ Follow [this tutorial](https://superuser.com/questions/1557955/how-to-remove-fir
 
 ### VSCode Theme and Font
 
-- Theme [Horizon](https://github.com/alexandernanberg/horizon-theme-vscode)
+- Theme **Adwaita Dark & default syntax highlighting & colorful status bar**
 - Open settings and add 'FiraCode Nerd Font' to the start of the list
-
-## References
-
-- Color palette [Horizon](https://horizontheme.netlify.app/)
