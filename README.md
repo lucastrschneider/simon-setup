@@ -46,7 +46,7 @@ Based on [this documentation](https://docs.docker.com/engine/install/fedora/)
 
 Open the file `/etc/modprobe.d/alsa-base.conf` (or create it) and add this line at the end
 
-```
+```bash
 # Custom
 options snd-hda-intel model=headset-mic,dell-headset-multi
 ```
@@ -225,11 +225,11 @@ sudo cp *.* /etc/udev/rules.d
 
 ### STM32CubeMonitor
 
-**TODO**
+TODO
 
 ### JLink
 
-**TODO**
+TODO
 
 ## Aditional configurations
 
