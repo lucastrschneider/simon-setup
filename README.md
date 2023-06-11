@@ -23,13 +23,13 @@ nvidia-smi
 Install [nvitop](https://github.com/XuehaiPan/nvitop) to monitor CPU, GPU and memory usage with the terminal
 
 ```bash
-sudo pip3 install --upgrade nvitop
+pip3 install --user nvitop
 ```
 
 To run as resource monitor:
 
 ```bash
-nvitop -m
+python3 -m nvitop
 ```
 
 ## Docker
