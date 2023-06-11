@@ -15,7 +15,7 @@ colors:
     focused_match:
       background: '0x010a0d' #'0x0d0103'
       foreground: '0xa7c9bd'
-    bar:
+    footer_bar:
       background: '0x010a0d' #'0x0d0103'
       foreground: '0xa7c9bd'
   line_indicator:

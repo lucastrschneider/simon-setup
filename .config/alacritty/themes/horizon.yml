@@ -15,7 +15,7 @@ colors:
     focused_match:
       background: '0x121212'
       foreground: '0xFADAD1'
-    bar:
+    footer_bar:
       background: '0x121212'
       foreground: '0xFADAD1'
   line_indicator:
