@@ -1,35 +1,51 @@
 # Simon Setup
 
-## Basic applications
+## Post Install
 
-Install Fedora 37 and follow the [Fedora 37 Post Install Guide](https://github.com/devangshekhawat/Fedora-37-Post-Install-Guide)
+Install Fedora 39 and follow the [Fedora 39 Post Install Guide](https://github.com/devangshekhawat/Fedora-39-Post-Install-Guide)
+
+After that, install [adw-gtk3](https://github.com/lassekongo83/adw-gtk3) for legacy applications themes
+
+## Git
+
+```bash
+export GIT_USER="Lucas T. R. Schneider"
+export GIT_EMAIL="lucastrschneider@gmail.com"
+
+git config --global init.defaultBranch main
+git config --global core.autocrlf input
+git config --global user.name $GITHUB_USER
+git config --global user.email $GITHUB_EMAIL
+```
+
+If you want, generate a new SSH key
+
+```bash
+ssh-keygen -t ed25519 -C $GITHUB_EMAIL
+```
+
+Add the (new) key to the SSH agent
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519_git
+```
+
+Copy the public key and add it wherever you need
+
+```bash
+sudo dnf install xclip -y
+xclip -selection clipboard < ~/.ssh/id_ed25519_git.pub
+```
+
+After this point, you should clone the repository in order to run the scripts more easily
+
+## Basic Applications
 
 After that, run the *basic install* script
 
 ```bash
 ./basic_install.sh
-```
-
-## Nvidia Graphics
-
-After following the instructions in the Post Install Guide, check with everything is working by running the following command
-
-```bash
-nvidia-smi
-```
-
-### Nvitop
-
-Install [nvitop](https://github.com/XuehaiPan/nvitop) to monitor CPU, GPU and memory usage with the terminal
-
-```bash
-pip3 install --user nvitop
-```
-
-To run as resource monitor:
-
-```bash
-python3 -m nvitop
 ```
 
 ## Docker
@@ -53,25 +69,9 @@ options snd-hda-intel model=headset-mic,dell-headset-multi
 
 Now reboot and test if the headset choose pop-up appears when plugged
 
-## SSH Keys
 
-Run the following script an add the copied key to GitHub
 
-```bash
-./git_ssh_config.sh
-```
-
-## Keyboard Shorcuts
-
-Run the following script to configure keyboard shortcuts using dconf
-
-```bash
-./change_keybindings.sh
-```
-
-For extra shortcuts, add then using GNOME Settings application
-
-## Alacritty
+<!-- ## Alacritty
 
 First, set alacritty to be the default terminal application
 
@@ -94,9 +94,9 @@ Remember to install the dependency:
 
 ```bash
 sudo dnf install nautilus-python
-```
+``` -->
 
-## Wofi
+<!-- ## Wofi
 
 Add command as the `<Super>Space` keyboard shortcut
 
@@ -104,38 +104,20 @@ Add command as the `<Super>Space` keyboard shortcut
 wofi -S drun
 ```
 
-Style based on [synaptiko/.files](https://github.com/synaptiko/.files/blob/master/wofi/style.css)
+Style based on [synaptiko/.files](https://github.com/synaptiko/.files/blob/master/wofi/style.css) -->
 
-## Nautilus
+## Nvitop
 
-Add command as the `<Super>f` keyboard shortcut
+Install [nvitop](https://github.com/XuehaiPan/nvitop) to monitor CPU, GPU and memory usage with the terminal
 
 ```bash
-nautilus --new-window
+pip3 install --user nvitop
 ```
 
-## VSCode
-
-Add command as the `<Super>c` keyboard shortcut
+To run as resource monitor:
 
 ```bash
-code
-```
-
-## Discord
-
-Install the WebCord, so that screensharing works properly on wayland.
-
-```bash
-flatpak install flathub io.github.spacingbat3.webcord
-```
-
-## Spotify
-
-Install from flathub using the following command
-
-```bash
-sudo flatpak install flathub com.spotify.Client
+python3 -m nvitop
 ```
 
 ## Settings
@@ -164,17 +146,11 @@ sudo flatpak install flathub com.spotify.Client
 
 - [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
 - [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
-- [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
-- [Quick Settings Tweaker](https://extensions.gnome.org/extension/5446/quick-settings-tweaker/)
-- [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
 - [Clipboard History](https://extensions.gnome.org/extension/4839/clipboard-history/)
-- [Aylur's Widgets](https://extensions.gnome.org/extension/5338/aylurs-widgets/)
 - [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
-- [X11 Gestures](https://extensions.gnome.org/extension/4033/x11-gestures/)
 
-### Built-In
-
-- Pop Shell
+- [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
+- [Aylur's Widgets](https://extensions.gnome.org/extension/5338/aylurs-widgets/)
 
 ## STMicoreletronics
 
@@ -232,6 +208,32 @@ TODO
 TODO
 
 ## Aditional configurations
+
+### Keyboard Shorcuts
+
+Run the following script to configure keyboard shortcuts using dconf
+
+```bash
+./change_keybindings.sh
+```
+
+For extra shortcuts, add then using GNOME Settings application
+
+#### Nautilus
+
+Add command as the `<Super>f` keyboard shortcut
+
+```bash
+nautilus --new-window
+```
+
+#### VSCode
+
+Add command as the `<Super>c` keyboard shortcut
+
+```bash
+code
+```
 
 ### Automount
 
