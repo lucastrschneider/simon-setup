@@ -36,12 +36,10 @@ sudo dnf install -y htop gnome-tweaks
 # Pop shell
 sudo dnf install -y gnome-shell-extension-pop-shell xprop
 
-# Install fish and related
-#sudo dnf install fish util-linux-user -y
+# Install zsh and related
+sudo dnf install zsh curl -y
+chsh -s $(which zsh)
 
-#chsh -s $(which fish)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -sS https://starship.rs/install.sh | sh
 
-#sudo dnf install curl -y
-#sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-
-#yes | curl -L https://get.oh-my.fish | fish
