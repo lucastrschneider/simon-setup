@@ -132,16 +132,6 @@ Remember to install the dependency:
 sudo dnf install nautilus-python
 ``` -->
 
-<!-- ## Wofi
-
-Add command as the `<Super>Space` keyboard shortcut
-
-```bash
-wofi -S drun
-```
-
-Style based on [synaptiko/.files](https://github.com/synaptiko/.files/blob/master/wofi/style.css) -->
-
 ## Nvitop
 
 Install [nvitop](https://github.com/XuehaiPan/nvitop) to monitor CPU, GPU and memory usage with the terminal
@@ -188,7 +178,7 @@ python3 -m nvitop
 - [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
 - [Aylur's Widgets](https://extensions.gnome.org/extension/5338/aylurs-widgets/)
 
-## STMicoreletronics
+## STMicroelectronics
 
 ### ARM GCC
 
@@ -198,7 +188,7 @@ First, install dependencies.
 sudo dnf install libncurses5
 ```
 
-Then, download latest *GNU Arm Embedded Toolchain* from the [Arm Developer website](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Extract it in the desired location (`/usr/local` for exemple) and add it to PATH
+Then, download latest *GNU Arm Embedded Toolchain* from the [Arm Developer website](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Extract it in the desired location (`/usr/local` for example) and add it to PATH
 
 ```bash
 sudo tar xjf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C /usr/local
@@ -243,9 +233,9 @@ TODO
 
 TODO
 
-## Aditional configurations
+## Additional configurations
 
-### Keyboard Shorcuts
+### Keyboard Shortcuts
 
 Run the following script to configure keyboard shortcuts using dconf
 
@@ -253,23 +243,13 @@ Run the following script to configure keyboard shortcuts using dconf
 ./change_keybindings.sh
 ```
 
-For extra shortcuts, add then using GNOME Settings application
+On GNOME Settings, open the Keyboard Shortcuts editor and add the following shortcuts
 
-#### Nautilus
-
-Add command as the `<Super>f` keyboard shortcut
-
-```bash
-nautilus --new-window
-```
-
-#### VSCode
-
-Add command as the `<Super>c` keyboard shortcut
-
-```bash
-code
-```
+- Custom Shortcuts: Terminal, `gnome-terminal`, `<Super>Return`
+- Custom Shortcuts: Files, `nautilus --new-window`, `<Super>F`
+- Custom Shortcuts: VSCode, `code`, `<Super>C`
+- Windows: Close Window, `<Super>Q`
+- Launchers: Launch Web Browser, `<Super>B`
 
 ### Automount
 
