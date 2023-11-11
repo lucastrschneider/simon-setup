@@ -33,9 +33,6 @@ sudo dnf install code -y
 # Other utilities
 sudo dnf install -y htop gnome-tweaks
 
-# Pop shell
-sudo dnf install -y gnome-shell-extension-pop-shell xprop
-
 # Install shells and related
 sudo dnf install zsh -y
 sudo dnf install fish util-linux-user -y

@@ -1,15 +1,5 @@
-# Disable pop launcher and add tile new keybinding
-dconf write '/org/gnome/shell/extensions/pop-shell/activate-launcher' "['']"
-dconf write '/org/gnome/shell/extensions/pop-shell/tile-enter' "['<Super>slash']"
-
 # Change GNOME launchers shortcuts
 dconf write '/org/gnome/settings-daemon/plugins/media-keys/home' "['']"
-
-# Focus windows
-dconf write '/org/gnome/shell/extensions/pop-shell/focus-down' "['<Super>Down', '<Super>j']"
-dconf write '/org/gnome/shell/extensions/pop-shell/focus-left' "['<Super>Left', '<Super>h']"
-dconf write '/org/gnome/shell/extensions/pop-shell/focus-right' "['<Super>Right', '<Super>l']"
-dconf write '/org/gnome/shell/extensions/pop-shell/focus-up' "['<Super>Up', '<Super>k']"
 
 # Remove the switch to application shortcuts
 dconf write '/org/gnome/shell/keybindings/switch-to-application-1' "['']"
@@ -52,16 +42,9 @@ dconf write '/org/gnome/desktop/wm/keybindings/move-to-workspace-9' "['<Shift><S
 
 dconf write '/org/gnome/desktop/wm/keybindings/move-to-workspace-left' "['<Shift><Super>Left']"
 dconf write '/org/gnome/desktop/wm/keybindings/move-to-workspace-right' "['<Shift><Super>Right']"
-dconf write '/org/gnome/shell/extensions/pop-shell/pop-workspace-down' "['']"
-dconf write '/org/gnome/shell/extensions/pop-shell/pop-workspace-up' "['']"
 
 # Move windows between monitors
 dconf write '/org/gnome/desktop/wm/keybindings/move-to-monitor-right' "['']"
 dconf write '/org/gnome/desktop/wm/keybindings/move-to-monitor-left' "['']"
 dconf write '/org/gnome/desktop/wm/keybindings/move-to-monitor-down' "['']"
 dconf write '/org/gnome/desktop/wm/keybindings/move-to-monitor-up' "['']"
-
-dconf write '/org/gnome/shell/extensions/pop-shell/pop-monitor-down' "['<Control><Shift><Super>Down']"
-dconf write '/org/gnome/shell/extensions/pop-shell/pop-monitor-left' "['<Control><Shift><Super>Left']"
-dconf write '/org/gnome/shell/extensions/pop-shell/pop-monitor-right' "['<Control><Shift><Super>Right']"
-dconf write '/org/gnome/shell/extensions/pop-shell/pop-monitor-up' "['<Control><Shift><Super>Up']"
