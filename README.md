@@ -48,6 +48,18 @@ After that, run the *basic install* script
 ./basic_install.sh
 ```
 
+## Docker
+
+Run the script to install Docker and Docker Compose
+
+```bash
+./docker_install.sh
+```
+
+Based on [this documentation](https://docs.docker.com/engine/install/fedora/)
+
+## Shell
+
 ### zsh
 
 Install oh-my-zsh
@@ -85,16 +97,6 @@ If you want fish as the default shell
 ```bash
 chsh -s $(which fish)
 ```
-
-## Docker
-
-Run the script to install Docker and Docker Compose
-
-```bash
-./docker_install.sh
-```
-
-Based on [this documentation](https://docs.docker.com/engine/install/fedora/)
 
 ## Headset fix
 
