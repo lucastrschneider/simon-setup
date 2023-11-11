@@ -6,7 +6,7 @@ sudo dnf upgrade -y
 
 # Install basic tools
 sudo dnf group install "C Development Tools and Libraries" "Development Tools"
-sudo dnf install cmake make python3 python3-pip -y
+sudo dnf install cmake make python3 python3-pip curl -y
 
 # Install rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -37,7 +37,7 @@ sudo dnf install -y htop gnome-tweaks
 sudo dnf install -y gnome-shell-extension-pop-shell xprop
 
 # Install zsh and related
-sudo dnf install zsh curl -y
+sudo dnf install zsh -y
 chsh -s $(which zsh)
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

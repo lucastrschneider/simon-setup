@@ -13,7 +13,6 @@ style = "bold red"
 threshold = 30
 style = "bold yellow"
 
-
 # Replace the "❯" symbol in the prompt with "➜"
 [character]
 success_symbol = "[➜](bold green)"

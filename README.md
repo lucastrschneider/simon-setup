@@ -69,8 +69,6 @@ options snd-hda-intel model=headset-mic,dell-headset-multi
 
 Now reboot and test if the headset choose pop-up appears when plugged
 
-
-
 <!-- ## Alacritty
 
 First, set alacritty to be the default terminal application
