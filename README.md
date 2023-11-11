@@ -48,6 +48,44 @@ After that, run the *basic install* script
 ./basic_install.sh
 ```
 
+### zsh
+
+Install oh-my-zsh
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Add custom plugins
+
+```bash
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+If you want zsh as the default shell
+
+```bash
+chsh -s $(which zsh)
+```
+
+### fish
+
+Install oh-my-fish
+
+```bash
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+```
+
+If you want fish as the default shell
+
+```bash
+chsh -s $(which fish)
+```
+
 ## Docker
 
 Run the script to install Docker and Docker Compose
