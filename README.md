@@ -250,7 +250,6 @@ On GNOME Settings, open the Keyboard Shortcuts editor and add the following shor
 - Custom Shortcuts: Terminal, `gnome-terminal`, `<Super>Return`
 - Custom Shortcuts: Files, `nautilus --new-window`, `<Super>F`
 - Custom Shortcuts: VSCode, `code`, `<Super>C`
-- Windows: Close Window, `<Super>Q`
 - Launchers: Launch Web Browser, `<Super>B`
 
 ### Automount
