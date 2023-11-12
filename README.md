@@ -125,31 +125,6 @@ options snd-hda-intel model=headset-mic,dell-headset-multi
 
 Now reboot and test if the headset choose pop-up appears when plugged
 
-<!-- ## Alacritty
-
-First, set alacritty to be the default terminal application
-
-```bash
-gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/alacritty
-gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
-```
-
-After that, add command as the `<Super>Return` keyboard shortcut
-
-```bash
-alacritty
-```
-
-### Open Alacritty Here in Nautilus
-
-Follow the [nautilus-open-any-terminal](https://github.com/Stunkymonkey/nautilus-open-any-terminal) instructions.
-
-Remember to install the dependency:
-
-```bash
-sudo dnf install nautilus-python
-``` -->
-
 ## Nvitop
 
 Install [nvitop](https://github.com/XuehaiPan/nvitop) to monitor CPU, GPU and memory usage with the terminal

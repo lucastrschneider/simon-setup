@@ -8,9 +8,6 @@ sudo dnf upgrade -y
 sudo dnf group install "C Development Tools and Libraries" "Development Tools"
 sudo dnf install cmake make python3 python3-pip curl -y
 
-# Install alacritty
-#sudo dnf install alacritty -y
-
 # Install vscode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
