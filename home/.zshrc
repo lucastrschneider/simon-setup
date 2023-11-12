@@ -71,6 +71,8 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
+         rust
+         starship
          z
          zsh-autosuggestions
          zsh-history-substring-search
@@ -104,9 +106,6 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Enable starship
-eval "$(starship init zsh)"
 
 # Custom alias
 alias gedit='gnome-text-editor'
