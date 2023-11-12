@@ -8,9 +8,6 @@ sudo dnf upgrade -y
 sudo dnf group install "C Development Tools and Libraries" "Development Tools"
 sudo dnf install cmake make python3 python3-pip curl -y
 
-# Install rustup
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
 # Install alacritty
 #sudo dnf install alacritty -y
 
@@ -33,8 +30,5 @@ sudo dnf install code -y
 # Other utilities
 sudo dnf install -y htop gnome-tweaks
 
-# Install shells and related
-sudo dnf install zsh -y
-sudo dnf install fish util-linux-user -y
-
+# Starship prompt
 curl -sS https://starship.rs/install.sh | sh

@@ -15,6 +15,9 @@
         "libncurses",
         "libusb",
         "nvitop",
+        "proto",
+        "rustup",
+        "tlsv",
         "touchpad",
         "udev",
         "xclip"

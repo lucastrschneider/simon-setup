@@ -62,6 +62,10 @@ Based on [this documentation](https://docs.docker.com/engine/install/fedora/)
 
 ### zsh
 
+```bash
+sudo dnf install zsh
+```
+
 Install oh-my-zsh
 
 ```bash
@@ -86,6 +90,10 @@ chsh -s $(which zsh)
 
 ### fish
 
+```bash
+sudo dnf install fish util-linux-user
+```
+
 Install oh-my-fish
 
 ```bash
@@ -96,6 +104,14 @@ If you want fish as the default shell
 
 ```bash
 chsh -s $(which fish)
+```
+
+## Rust
+
+Install rustup (preferably after configuring the shell)
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 ## Headset fix
