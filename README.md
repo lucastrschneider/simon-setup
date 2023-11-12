@@ -175,10 +175,8 @@ python3 -m nvitop
 - [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
 - [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
 - [Clipboard History](https://extensions.gnome.org/extension/4839/clipboard-history/)
-- [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
-
 - [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
-- [Aylur's Widgets](https://extensions.gnome.org/extension/5338/aylurs-widgets/)
+- [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
 
 ## STMicroelectronics
 
