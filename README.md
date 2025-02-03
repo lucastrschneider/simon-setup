@@ -18,6 +18,12 @@ git config --global user.name $GITHUB_USER
 git config --global user.email $GITHUB_EMAIL
 ```
 
+## SSH
+
+Just copy the .ssh folder from the backup to the home directory. You can also add them to the SSH agent if you want (see bellow).
+
+### Generate new SSH keys
+
 If you want, generate a new SSH key
 
 ```bash
