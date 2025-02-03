@@ -242,7 +242,7 @@ Run the following script to configure keyboard shortcuts using dconf
 
 On GNOME Settings, open the Keyboard Shortcuts editor and add the following shortcuts
 
-- Custom Shortcuts: Terminal, `gnome-terminal`, `<Super>Return`
+- Custom Shortcuts: Terminal, `ptyxis --new-window`, `<Super>Return`
 - Custom Shortcuts: Files, `nautilus --new-window`, `<Super>F`
 - Custom Shortcuts: VSCode, `code`, `<Super>C`
 - Launchers: Launch Web Browser, `<Super>B`
