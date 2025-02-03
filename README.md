@@ -2,7 +2,7 @@
 
 ## Post Install
 
-Install Fedora 39 and follow the [Fedora 39 Post Install Guide](https://github.com/devangshekhawat/Fedora-39-Post-Install-Guide)
+Install Fedora 41 and follow the [Fedora 41 Post Install Guide](https://github.com/devangshekhawat/Fedora-41-Post-Install-Guide)
 
 After that, install [adw-gtk3](https://github.com/lassekongo83/adw-gtk3) for legacy applications themes
 
@@ -174,6 +174,9 @@ python3 -m nvitop
 - [Clipboard History](https://extensions.gnome.org/extension/4839/clipboard-history/)
 - [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
 - [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
+- [Simple Workspaces Bar](https://extensions.gnome.org/extension/6394/simple-workspaces-bar/)
+- [Firefox PiP Always on Top](https://extensions.gnome.org/extension/5306/firefox-pip-always-on-top/)
+- [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
 
 ## STMicroelectronics
 
