@@ -166,14 +166,14 @@ python3 -m nvitop
 
 ### Manually installed
 
-- [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
-- [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
-- [Clipboard History](https://extensions.gnome.org/extension/4839/clipboard-history/)
-- [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
-- [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
-- [Simple Workspaces Bar](https://extensions.gnome.org/extension/6394/simple-workspaces-bar/)
-- [Firefox PiP Always on Top](https://extensions.gnome.org/extension/5306/firefox-pip-always-on-top/)
 - [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
+- [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
+- [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+- [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
+- [PiP on top](https://extensions.gnome.org/extension/4691/pip-on-top/)
+- [Rounded Window Corners Reborn](https://extensions.gnome.org/extension/7048/rounded-window-corners-reborn/)
+- [Space Bar](https://extensions.gnome.org/extension/5090/space-bar/)
+- [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
 
 ## STMicroelectronics
 
