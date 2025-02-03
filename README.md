@@ -9,13 +9,10 @@ After that, install [adw-gtk3](https://github.com/lassekongo83/adw-gtk3) for leg
 ## Git
 
 ```bash
-export GIT_USER="Lucas T. R. Schneider"
-export GIT_EMAIL="lucastrschneider@gmail.com"
-
 git config --global init.defaultBranch main
 git config --global core.autocrlf input
-git config --global user.name $GITHUB_USER
-git config --global user.email $GITHUB_EMAIL
+git config --global user.name "Lucas T. R. Schneider"
+git config --global user.email "lucastrschneider@gmail.com"
 ```
 
 ## SSH
@@ -27,7 +24,7 @@ Just copy the .ssh folder from the backup to the home directory. You can also ad
 If you want, generate a new SSH key
 
 ```bash
-ssh-keygen -t ed25519 -C $GITHUB_EMAIL
+ssh-keygen -t ed25519 -C "lucastrschneider@gmail.com"
 ```
 
 Add the (new) key to the SSH agent
