@@ -56,13 +56,13 @@ After that, run the *basic install* script
 
 ## Docker
 
-Run the script to install Docker and Docker Compose
+Follow [this documentation](https://docs.docker.com/engine/install/fedora/) to install Docker.
+
+After that, you can also install rocker if you want
 
 ```bash
-./docker_install.sh
+sudo pip3 install rocker
 ```
-
-Based on [this documentation](https://docs.docker.com/engine/install/fedora/)
 
 ## Shell
 
