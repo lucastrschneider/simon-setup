@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=STM32CubeMX
+GenericName=STM32CubeMX
+Comment=Graphical tool for configuration of STM32 Microcontrollers
+Exec=/usr/local/STMicroelectronics/STM32Cube/STM32CubeMX/STM32CubeMX
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/home/schneider/.local/share/applications/icons/stm32cubemx.png
+StartupWMClass=STM32CubeMX
+StartupNotify=true

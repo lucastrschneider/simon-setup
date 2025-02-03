@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=STM32CubeProgrammer
+GenericName=STM32CubeProgrammer
+Comment=Graphical tool for programming STM32 Microcontrollers
+Exec=/usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32CubeProgrammer
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/usr/local/STMicroelectronics/STM32Cube/STM32CubeProgrammer/util/Programmer.ico
+StartupWMClass=STM32CubeProgrammer
+StartupNotify=true

@@ -1,35 +1,51 @@
 # Simon Setup
 
-## Basic applications
+## Post Install
 
-Install Fedora 37 and follow the [Fedora 37 Post Install Guide](https://github.com/devangshekhawat/Fedora-37-Post-Install-Guide)
+Install Fedora 39 and follow the [Fedora 39 Post Install Guide](https://github.com/devangshekhawat/Fedora-39-Post-Install-Guide)
+
+After that, install [adw-gtk3](https://github.com/lassekongo83/adw-gtk3) for legacy applications themes
+
+## Git
+
+```bash
+export GIT_USER="Lucas T. R. Schneider"
+export GIT_EMAIL="lucastrschneider@gmail.com"
+
+git config --global init.defaultBranch main
+git config --global core.autocrlf input
+git config --global user.name $GITHUB_USER
+git config --global user.email $GITHUB_EMAIL
+```
+
+If you want, generate a new SSH key
+
+```bash
+ssh-keygen -t ed25519 -C $GITHUB_EMAIL
+```
+
+Add the (new) key to the SSH agent
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519_git
+```
+
+Copy the public key and add it wherever you need
+
+```bash
+sudo dnf install xclip -y
+xclip -selection clipboard < ~/.ssh/id_ed25519_git.pub
+```
+
+After this point, you should clone the repository in order to run the scripts more easily
+
+## Basic Applications
 
 After that, run the *basic install* script
 
 ```bash
 ./basic_install.sh
-```
-
-## Nvidia Graphics
-
-After following the instructions in the Post Install Guide, check with everything is working by running the following command
-
-```bash
-nvidia-smi
-```
-
-### Nvitop
-
-Install [nvitop](https://github.com/XuehaiPan/nvitop) to monitor CPU, GPU and memory usage with the terminal
-
-```bash
-pip3 install --user nvitop
-```
-
-To run as resource monitor:
-
-```bash
-python3 -m nvitop
 ```
 
 ## Docker
@@ -42,6 +58,62 @@ Run the script to install Docker and Docker Compose
 
 Based on [this documentation](https://docs.docker.com/engine/install/fedora/)
 
+## Shell
+
+### zsh
+
+```bash
+sudo dnf install zsh
+```
+
+Install oh-my-zsh
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Add custom plugins
+
+```bash
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+If you want zsh as the default shell
+
+```bash
+chsh -s $(which zsh)
+```
+
+### fish
+
+```bash
+sudo dnf install fish util-linux-user
+```
+
+Install oh-my-fish
+
+```bash
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+```
+
+If you want fish as the default shell
+
+```bash
+chsh -s $(which fish)
+```
+
+## Rust
+
+Install rustup (preferably after configuring the shell)
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
 ## Headset fix
 
 Open the file `/etc/modprobe.d/alsa-base.conf` (or create it) and add this line at the end
@@ -53,89 +125,18 @@ options snd-hda-intel model=headset-mic,dell-headset-multi
 
 Now reboot and test if the headset choose pop-up appears when plugged
 
-## SSH Keys
+## Nvitop
 
-Run the following script an add the copied key to GitHub
+Install [nvitop](https://github.com/XuehaiPan/nvitop) to monitor CPU, GPU and memory usage with the terminal
 
 ```bash
-./git_ssh_config.sh
+pip3 install --user nvitop
 ```
 
-## Keyboard Shorcuts
-
-Run the following script to configure keyboard shortcuts using dconf
+To run as resource monitor:
 
 ```bash
-./change_keybindings.sh
-```
-
-For extra shortcuts, add then using GNOME Settings application
-
-## Alacritty
-
-First, set alacritty to be the default terminal application
-
-```bash
-gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/alacritty
-gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
-```
-
-After that, add command as the `<Super>Return` keyboard shortcut
-
-```bash
-alacritty
-```
-
-### Open Alacritty Here in Nautilus
-
-Follow the [natulius-open-any-terminal](https://github.com/Stunkymonkey/nautilus-open-any-terminal) instructions.
-
-Remember to install the dependency:
-
-```bash
-sudo dnf install nautilus-python
-```
-
-## Wofi
-
-Add command as the `<Super>Space` keyboard shortcut
-
-```bash
-wofi -S drun
-```
-
-Style based on [synaptiko/.files](https://github.com/synaptiko/.files/blob/master/wofi/style.css)
-
-## Nautilus
-
-Add command as the `<Super>f` keyboard shortcut
-
-```bash
-nautilus --new-window
-```
-
-## VSCode
-
-Add command as the `<Super>c` keyboard shortcut
-
-```bash
-code
-```
-
-## Discord
-
-Install the WebCord, so that screensharing works properly on wayland.
-
-```bash
-flatpak install flathub io.github.spacingbat3.webcord
-```
-
-## Spotify
-
-Install from flathub using the following command
-
-```bash
-sudo flatpak install flathub com.spotify.Client
+python3 -m nvitop
 ```
 
 ## Settings
@@ -164,19 +165,11 @@ sudo flatpak install flathub com.spotify.Client
 
 - [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
 - [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
-- [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
-- [Quick Settings Tweaker](https://extensions.gnome.org/extension/5446/quick-settings-tweaker/)
-- [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
 - [Clipboard History](https://extensions.gnome.org/extension/4839/clipboard-history/)
-- [Aylur's Widgets](https://extensions.gnome.org/extension/5338/aylurs-widgets/)
-- [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
-- [X11 Gestures](https://extensions.gnome.org/extension/4033/x11-gestures/)
+- [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
+- [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
 
-### Built-In
-
-- Pop Shell
-
-## STMicoreletronics
+## STMicroelectronics
 
 ### ARM GCC
 
@@ -186,7 +179,7 @@ First, install dependencies.
 sudo dnf install libncurses5
 ```
 
-Then, download latest *GNU Arm Embedded Toolchain* from the [Arm Developer website](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Extract it in the desired location (`/usr/local` for exemple) and add it to PATH
+Then, download latest *GNU Arm Embedded Toolchain* from the [Arm Developer website](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Extract it in the desired location (`/usr/local` for example) and add it to PATH
 
 ```bash
 sudo tar xjf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C /usr/local
@@ -231,15 +224,26 @@ TODO
 
 TODO
 
-## Aditional configurations
+## Additional configurations
+
+### Keyboard Shortcuts
+
+Run the following script to configure keyboard shortcuts using dconf
+
+```bash
+./change_keybindings.sh
+```
+
+On GNOME Settings, open the Keyboard Shortcuts editor and add the following shortcuts
+
+- Custom Shortcuts: Terminal, `gnome-terminal`, `<Super>Return`
+- Custom Shortcuts: Files, `nautilus --new-window`, `<Super>F`
+- Custom Shortcuts: VSCode, `code`, `<Super>C`
+- Launchers: Launch Web Browser, `<Super>B`
 
 ### Automount
 
 Use the **GNOME Disk** to configure the data partition to be automounted at login. Then it is possible to add bookmarks in Nautilus for the folders there
-
-### Firefox
-
-Follow [this tutorial](https://superuser.com/questions/1557955/how-to-remove-firefox-orange-microphone-webcam-indicator-from-the-top-of-the-scr) to remove the icon showing when mic and camera are beeing used. This is necessary because they aren't reconized as pop-ups from pop shell, and will be added to the auto-tiling
 
 ### VSCode Theme and Font
 
