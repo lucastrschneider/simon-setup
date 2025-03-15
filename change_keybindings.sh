@@ -20,8 +20,8 @@ dconf write '/org/gnome/desktop/wm/keybindings/switch-to-workspace-7' "['<Super>
 dconf write '/org/gnome/desktop/wm/keybindings/switch-to-workspace-8' "['<Super>8','<Super>KP_Up']"
 dconf write '/org/gnome/desktop/wm/keybindings/switch-to-workspace-9' "['<Super>9','<Super>KP_Page_Up']"
 
-dconf write '/org/gnome/desktop/wm/keybindings/switch-to-workspace-left' "['<Control><Super>Left']"
-dconf write '/org/gnome/desktop/wm/keybindings/switch-to-workspace-right' "['<Control><Super>Right']"
+dconf write '/org/gnome/desktop/wm/keybindings/switch-to-workspace-left' "['<Control><Super>Left', '<Control><Super>h']"
+dconf write '/org/gnome/desktop/wm/keybindings/switch-to-workspace-right' "['<Control><Super>Right', '<Control><Super>l']"
 dconf write '/org/gnome/desktop/wm/keybindings/switch-to-workspace-down' "['']"
 dconf write '/org/gnome/desktop/wm/keybindings/switch-to-workspace-up' "['']"
 
@@ -36,8 +36,8 @@ dconf write '/org/gnome/desktop/wm/keybindings/move-to-workspace-7' "['<Shift><S
 dconf write '/org/gnome/desktop/wm/keybindings/move-to-workspace-8' "['<Shift><Super>8','<Shift><Super>KP_Up']"
 dconf write '/org/gnome/desktop/wm/keybindings/move-to-workspace-9' "['<Shift><Super>9','<Shift><Super>KP_Page_Up']"
 
-dconf write '/org/gnome/desktop/wm/keybindings/move-to-workspace-left' "['<Shift><Super>Left']"
-dconf write '/org/gnome/desktop/wm/keybindings/move-to-workspace-right' "['<Shift><Super>Right']"
+dconf write '/org/gnome/desktop/wm/keybindings/move-to-workspace-left' "['<Shift><Super>Left', '<Shift><Super>h']"
+dconf write '/org/gnome/desktop/wm/keybindings/move-to-workspace-right' "['<Shift><Super>Right', '<Shift><Super>l']"
 dconf write '/org/gnome/desktop/wm/keybindings/move-to-workspace-down' "['']"
 dconf write '/org/gnome/desktop/wm/keybindings/move-to-workspace-up' "['']"
 
