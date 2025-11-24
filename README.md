@@ -2,7 +2,7 @@
 
 ## Post Install
 
-Install Fedora 41 and follow the [Fedora 41 Post Install Guide](https://github.com/devangshekhawat/Fedora-41-Post-Install-Guide)
+Install Fedora 43 and follow the [Fedora 43 Post Install Guide](https://github.com/devangshekhawat/Fedora-43-Post-Install-Guide)
 
 After that, install [adw-gtk3](https://github.com/lassekongo83/adw-gtk3) for legacy applications themes
 
@@ -41,7 +41,7 @@ sudo dnf install xclip -y
 xclip -selection clipboard < ~/.ssh/id_ed25519_git.pub
 ```
 
-After this point, you should clone the repository in order to run the scripts more easily
+After this point, you should clone this repository in order to run the scripts more easily
 
 ## Basic Applications
 
@@ -63,26 +63,8 @@ sudo pip3 install rocker
 
 ## Shell
 
-### zsh
-
 ```bash
-sudo dnf install zsh
-```
-
-Install oh-my-zsh
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Add custom plugins
-
-```bash
-git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
-
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+./setup_zsh.sh
 ```
 
 If you want zsh as the default shell
@@ -91,42 +73,25 @@ If you want zsh as the default shell
 chsh -s $(which zsh)
 ```
 
-### fish
-
-```bash
-sudo dnf install fish util-linux-user
-```
-
-Install oh-my-fish
-
-```bash
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-```
-
-If you want fish as the default shell
-
-```bash
-chsh -s $(which fish)
-```
-
-## Rust
-
-Install rustup (preferably after configuring the shell)
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
 ## Headset fix
 
-Open the file `/etc/modprobe.d/alsa-base.conf` (or create it) and add this line at the end
-
 ```bash
-# Custom
-options snd-hda-intel model=headset-mic,dell-headset-multi
+./headset_filx.sh
 ```
 
-Now reboot and test if the headset choose pop-up appears when plugged
+## Dotfiles
+
+### Create symlinks
+
+```bash
+./link_dotfiles.sh
+```
+
+### Extract archives
+
+```bash
+./extract_archives.sh
+```
 
 ## Nvitop
 
