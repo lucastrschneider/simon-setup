@@ -76,7 +76,7 @@ chsh -s $(which zsh)
 ## Headset fix
 
 ```bash
-./headset_filx.sh
+./headset_fix.sh
 ```
 
 ## Dotfiles
@@ -139,6 +139,8 @@ python3 -m nvitop
 - [Rounded Window Corners Reborn](https://extensions.gnome.org/extension/7048/rounded-window-corners-reborn/)
 - [Space Bar](https://extensions.gnome.org/extension/5090/space-bar/)
 - [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
+- [Tiling Shell](https://extensions.gnome.org/extension/7065/tiling-shell/)
+- [ArcMenu](https://extensions.gnome.org/extension/3628/arcmenu/)
 
 ## STMicroelectronics
 
