@@ -2,26 +2,29 @@
 
 ## Post Install
 
-Install Fedora 39 and follow the [Fedora 39 Post Install Guide](https://github.com/devangshekhawat/Fedora-39-Post-Install-Guide)
+Install Fedora 41 and follow the [Fedora 41 Post Install Guide](https://github.com/devangshekhawat/Fedora-41-Post-Install-Guide)
 
 After that, install [adw-gtk3](https://github.com/lassekongo83/adw-gtk3) for legacy applications themes
 
 ## Git
 
 ```bash
-export GIT_USER="Lucas T. R. Schneider"
-export GIT_EMAIL="lucastrschneider@gmail.com"
-
 git config --global init.defaultBranch main
 git config --global core.autocrlf input
-git config --global user.name $GITHUB_USER
-git config --global user.email $GITHUB_EMAIL
+git config --global user.name "Lucas T. R. Schneider"
+git config --global user.email "lucastrschneider@gmail.com"
 ```
+
+## SSH
+
+Just copy the .ssh folder from the backup to the home directory. You can also add them to the SSH agent if you want (see bellow).
+
+### Generate new SSH keys
 
 If you want, generate a new SSH key
 
 ```bash
-ssh-keygen -t ed25519 -C $GITHUB_EMAIL
+ssh-keygen -t ed25519 -C "lucastrschneider@gmail.com"
 ```
 
 Add the (new) key to the SSH agent
@@ -50,13 +53,13 @@ After that, run the *basic install* script
 
 ## Docker
 
-Run the script to install Docker and Docker Compose
+Follow [this documentation](https://docs.docker.com/engine/install/fedora/) to install Docker.
+
+After that, you can also install rocker if you want
 
 ```bash
-./docker_install.sh
+sudo pip3 install rocker
 ```
-
-Based on [this documentation](https://docs.docker.com/engine/install/fedora/)
 
 ## Shell
 
@@ -163,11 +166,14 @@ python3 -m nvitop
 
 ### Manually installed
 
+- [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
 - [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
-- [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
-- [Clipboard History](https://extensions.gnome.org/extension/4839/clipboard-history/)
+- [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
 - [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
-- [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
+- [PiP on top](https://extensions.gnome.org/extension/4691/pip-on-top/)
+- [Rounded Window Corners Reborn](https://extensions.gnome.org/extension/7048/rounded-window-corners-reborn/)
+- [Space Bar](https://extensions.gnome.org/extension/5090/space-bar/)
+- [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
 
 ## STMicroelectronics
 
@@ -236,7 +242,7 @@ Run the following script to configure keyboard shortcuts using dconf
 
 On GNOME Settings, open the Keyboard Shortcuts editor and add the following shortcuts
 
-- Custom Shortcuts: Terminal, `gnome-terminal`, `<Super>Return`
+- Custom Shortcuts: Terminal, `ptyxis --new-window`, `<Super>Return`
 - Custom Shortcuts: Files, `nautilus --new-window`, `<Super>F`
 - Custom Shortcuts: VSCode, `code`, `<Super>C`
 - Launchers: Launch Web Browser, `<Super>B`
