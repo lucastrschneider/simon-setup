@@ -27,5 +27,11 @@ sudo dnf install code -y
 # Other utilities
 sudo dnf install -y htop gnome-tweaks
 
+# Pyenv
+curl -fsSL https://pyenv.run | bash
+
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # Starship prompt
 curl -sS https://starship.rs/install.sh | sh
