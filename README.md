@@ -2,9 +2,13 @@
 
 ## Post Install
 
-Install Fedora 43 and follow the [Fedora 43 Post Install Guide](https://github.com/devangshekhawat/Fedora-43-Post-Install-Guide)
+Install Fedora 43 and follow the [Fedora 43 Post Install Guide](https://github.com/devangshekhawat/Fedora-43-Post-Install-Guide), except for the nvidia drivers sections.
 
 After that, install [adw-gtk3](https://github.com/lassekongo83/adw-gtk3) for legacy applications themes
+
+## Nvidia
+
+Install the nvidia-drivers from the [negativo17](https://negativo17.org/nvidia-driver/) repository.
 
 ## Git
 
